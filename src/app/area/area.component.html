@@ -1,0 +1,36 @@
+<p>
+  area works!
+</p>
+<input type="test"
+       (input)="writeNameOfClient($event)"
+>
+<br>
+<br>
+vous tapez:{{nomClient}}
+<br>
+<br>
+<br>
+<br><br>
+<br>
+{{Message}}
+{{!isEnabled}}
+<button (click)="onReserve()" [disabled]=isEnabled> reserve</button>
+
+<br>
+<br>
+<br>
+<br>
+<span [innerHTML]="propertybinding"></span>
+<br>
+<br>
+<input type="text" name="val" #val /> <br>
+
+<button value="" (click)="calculateCercle(val.value)">calculer cercle</button>
+<button value="" (click)="calculateSquare(val.value)">calculer carré</button>
+
+
+Pour la valeur {{val.value}}, le résultat est {{res}}<br><br>
+<button value="" (click)="onClick()">click ({{compteur}})</button>
+{{compteur}}
+
+<span [innerHTML]="propertybinding"></span>

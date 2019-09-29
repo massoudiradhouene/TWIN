@@ -1,0 +1,41 @@
+<p>ttt</p>
+
+<!--
+<table>
+  <tr *ngFor='let listeArticles of listeArticles; let i =index'>
+    <legend>{{listeArticles.titre}}</legend>
+
+    <td bordure="2">
+      {{i}}
+
+      {{listeArticles.contenu}}
+    </td>
+  </tr>
+</table>
+-->
+
+<p>
+  {{titre}}
+</p>
+
+<fieldset *ngFor="let article of listeArticles" [ngStyle]="{'backgroundColor' : article.auteur === 'Med Taher' ? 'yellow' : 'white' }">
+
+
+  <legend>{{article.titre}}</legend>
+  <table>
+    <tr>
+      <td>Auteur</td>
+      <td>{{article.auteur}}</td>
+    </tr>
+
+    <tr>
+      <td>Date</td>
+      <td>{{article.date}}</td>
+    </tr>
+    <tr>
+      <td>Contenu</td>
+      <td>{{article.contenu}}</td>
+    </tr>
+  </table>
+
+</fieldset>

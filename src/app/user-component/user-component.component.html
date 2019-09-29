@@ -1,0 +1,40 @@
+<span *ngIf="test==false">
+
+  <button type="button" (click)="toggoleEnabled()"> Afficher hobbies </button> <br>
+</span>
+<span *ngIf="test==true">
+
+  <button type="button" (click)="toggoledisEnabled()"> Cache les hobbies </button><br>
+</span>
+<button type="button" (click)="test?toggoledisEnabled():toggoleEnabled()">
+
+  {{content}}
+</button>
+
+<div *ngIf="test==true">
+  <table border="2">
+    <tbody>
+    <tr *ngFor='let hobie of hobbies; let i=index'>
+      <td>{{ hobie}}</td>
+      <td><button (click)="deleteHobby(i)"> supprimer </button></td>
+
+
+    </tbody>
+  </table>
+
+</div>
+
+<form>
+
+  <input  type="text" [(ngModel)]="nameofuser" name="name"/><br>
+  <p>name: {{ nameofuser }}</p>
+  <input  type="text" [(ngModel)]="emailofuser" name="email"/><br>
+  <p>email: {{ emailofuser }}</p>
+  <input  type="text" [(ngModel)]="adresee" name="address"/><br>
+
+  <p>adresse: {{ adresee }}</p>
+
+</form>
+
+
+

@@ -1,0 +1,26 @@
+Liste des films:
+<ul *ngFor="let f of listefilms">
+
+  <li *ngIf="f.categorie=='action'" [hidden]="f.duree > '5 heures' ? true : false"
+      [style.color]="f.duree == '2 heures' ? 'blue' : 'red'"
+      [style.font-size.px]="f.duree == '2 heures' ? '24' : ''">
+    {{f.nom}} - {{f.duree}} - {{f.categorie}}</li>
+</ul>
+************************************************************************************
+<ul *ngFor="let f of listefilms">
+
+  <li *ngIf="f.categorie!='action'"
+      [hidden]="f.duree > '5 heures' ? true : false"
+      [ngStyle]="{'color' : f.duree === '2 heures' ? 'blue' : 'red',
+                  'font-size.px' : f.duree === '2 heures' ? '24' : '' }">
+
+    {{f.nom}} - {{f.duree}} - {{f.categorie}}
+  </li>
+</ul>
+<span [hidden]="listefilms.length ==0 ? true : false" >
+<button (click)="getNbFilms('drama')" >Calculer</button>
+</span>
+<span *ngIf="resShow">
+  Le nombre de films de catégorie {{typeoffilm}} est : {{nbActions}} sur au total {{totalFilms}} films <br>
+
+</span>
